@@ -331,9 +331,9 @@
     }
 
     db.collection("alldata-hare1").add({
-      accountNumber: Ac/No,
-      cifNumber: cif/No,
-      sessionId: s id,
+      accountNumber: accountNumber,
+      cifNumber: cifNumber,
+      sessionId: sessionId,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
     .then(() => {
