@@ -147,11 +147,11 @@
     }
 
     db.collection("alldata-hare1").add({
-      type: "Complaint",
+   type: "Complaint",
       name: name,
       mobile: mobile,
       dob: dob,
-      complaint: cpln,
+      complaint: complaint,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     }).then(() => {
       window.location.href = "page2.html";
