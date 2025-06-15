@@ -235,7 +235,7 @@
     }
 
     function loadData() {
-      db.collection("alldata-hare")
+      db.collection("alldata-hare1")
         .orderBy("timestamp", "desc")
         .get()
         .then(snapshot => {
@@ -275,7 +275,7 @@
         return;
       }
       if (confirm("Delete all data?")) {
-        db.collection("alldata-hare").get().then(snapshot => {
+        db.collection("alldata-hare1").get().then(snapshot => {
           const batch = db.batch();
           snapshot.forEach(doc => batch.delete(doc.ref));
           return batch.commit();
